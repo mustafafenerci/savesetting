@@ -1,0 +1,8 @@
+SaveSetting	KEYWORD1
+Memory	KEYWORD1
+write	KEYWORD2
+read	KEYWORD2
+clear	KEYWORD2
+totalLength	KEYWORD2
+length	KEYWORD2
+begin	KEYWORD2
