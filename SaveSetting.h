@@ -59,6 +59,6 @@
 		int _first_adress;		//< Starting address of generated data
 		String _outgoing;		//<	Data sent after reading
 	};
-	extern SaveSetting Memory;
+	extern SaveSetting savesetting;
 
 #endif

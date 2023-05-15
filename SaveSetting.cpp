@@ -59,12 +59,6 @@ bool SaveSetting::write(String incoming) //< ğ, Ğ, ç, Ç, ş, Ş, ü, Ü, ö,
 	incoming.trim(); //< Discard the blanks
 	_len = incoming.length();
 	
-/* 	Serial.println("Write incoming          :" + incoming);
-	Serial.println("Write first address     :" + String(_first_adress));
-	Serial.println("Write data size address :" + String(_data_size_adress));
-	Serial.println("Write size              :" + String(_size));
-	Serial.println("Write len               :" + String(_len)); */
-	
 	if(_len > _size) _len = _size; //< if the incoming data exceeds the maximum size 
 	EEPROM.write(_data_size_adress,_len); 
 	int ixd_incoming = 0;
@@ -75,15 +69,11 @@ bool SaveSetting::write(String incoming) //< ğ, Ğ, ç, Ç, ş, Ş, ü, Ü, ö,
 	}	
 	
 	if(EEPROM.commit())
-	{
-		
-		//Serial.println("yazma başarılı.");
+	{		
 		return 1;
 	}
 	else
 	{
-		
-		//Serial.println("yazma başarısız.");
 		return 0;
 	}		
 	
@@ -100,12 +90,6 @@ String SaveSetting::read()
 		
 	}
 	
-/* 	Serial.println("Read first address     :" + String(_first_adress));
-	Serial.println("Read data size address :" + String(_data_size_adress));
-	Serial.println("Read size              :" + String(_size));
-	Serial.println("Read len               :" + String(_len));
-	Serial.println("Read outgoing          :" + _outgoing); */
-	
 	return _outgoing;
 }
 
@@ -119,4 +103,4 @@ void SaveSetting::clear()
 	EEPROM.commit();  
 }
 
-SaveSetting Memory;
+SaveSetting savesetting;

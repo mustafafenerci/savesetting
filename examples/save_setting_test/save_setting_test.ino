@@ -18,7 +18,7 @@ void setup() {
   while(!Serial);
   delay(2000);
   Serial.println("\nSaveSetting Start...");
-  Memory.begin();
+  savesetting.begin();
   Serial.println("Use Memory: " + String(Memory.totalLength()));
 
   
